@@ -1,48 +1,31 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { Route, Routes } from 'react-router-dom';
+// import { lazy } from 'react';
 import { Box } from 'components/Box/Box';
-import ContactForm from './ContactForm/ContactForm';
-import {
-  ContactFormTitle,
-  ContactFormSecondTitle,
-} from './ContactFormTitle/ContactFormTitle';
-import { ContactList } from './ContactList/ContactList';
-import { ContactFilter } from './ContactFilter/ContactFilter';
-import { selectContacts } from 'redux/selectors';
+import AppBar from 'pages/AppBar/AppBar';
+import Contacts from 'pages/Contacts/Contacts';
+import Home from 'pages/Home/Home';
+import Register from 'pages/Register/Register';
+import Login from 'pages/Login/Login';
+// const AppBar = lazy(() => import('../pages/AppBar'));
+// const Contacts = lazy(() => import('../pages/Contacts'));
 
-export default function PhoneBoock() {
-  const items = useSelector(selectContacts);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
+export default function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-      }}
-    >
-      <Box
-        height={750}
-        p={30}
-        bg="primary"
-        border="2px solid"
-        borderColor="border"
-        borderRadius={8}
-      >
-        <ContactFormTitle>PHONEBOOK</ContactFormTitle>
-        <ContactForm />
-        <ContactFilter />
-        <ContactFormSecondTitle>CONTACTS</ContactFormSecondTitle>
-        {items && <ContactList />}
-      </Box>
-    </div>
+    <Box p={30}>
+      <AppBar />
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Route>
+      </Routes>
+    </Box>
+
+    // <Routes>
+    //   <Route path="/" element={<AppBar />}>
+    //     <Route path="products" element={<Contacts />} />
+    //   </Route>
+    // </Routes>
   );
 }

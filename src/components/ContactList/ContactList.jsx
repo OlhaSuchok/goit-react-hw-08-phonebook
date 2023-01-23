@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from 'components/Loader/Loader';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/Contacts-operations';
 import { useEffect } from 'react';
 import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/Contacts-operations';
 import {
   selectVisibleContacts,
   selectIsLoading,
   selectError,
-} from 'redux/selectors';
+} from 'redux/contacts/Contacts-selectors';
 
 import {
   ContactListItem,
