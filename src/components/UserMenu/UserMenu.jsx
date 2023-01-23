@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { FaUserCircle } from 'react-icons/fa';
 
-import { filterContactsAction } from 'redux/filters/filterSlice';
+// import { filterContactsAction } from 'redux/filters/filterSlice';
 import { selectUserName } from 'redux/auth/Auth-selectors';
 import { logOut } from 'redux/auth/Auth-operations';
 import {

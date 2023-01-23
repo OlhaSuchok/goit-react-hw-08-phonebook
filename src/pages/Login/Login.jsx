@@ -1,5 +1,5 @@
 import { Box } from 'components/Box/Box';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/Auth-operations';
 import { useState } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';

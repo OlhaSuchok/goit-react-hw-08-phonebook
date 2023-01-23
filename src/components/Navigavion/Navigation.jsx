@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { filterContactsAction } from 'redux/filters/filterSlice';
+// import { filterContactsAction } from 'redux/filters/filterSlice';
 import { selectContactsFilter } from 'redux/contacts/Contacts-selectors';
 import React from 'react';
 
