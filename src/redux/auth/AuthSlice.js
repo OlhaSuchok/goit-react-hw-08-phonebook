@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  fetchContacts,
-  addContact,
-  deleteContact,
-} from 'redux/contacts/Contacts-operations';
+import { register, logIn, logOut } from 'redux/auth/Auth-operations';
 
 // const handlePending = state => {
 //   state.isLoading = true;
@@ -14,16 +10,33 @@ import {
 //   state.error = action.payload;
 // };
 
-const authInitialState = {
-  user: { name: null, email: null },
+const initialState = {
+  user: { name: '', email: '' },
   token: null,
   isLoggedIn: false,
 };
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: authInitialState,
-  extraReducers: builder => {
+  initialState: initialState,
+  extraReducers: {
+    [register.fulfilled](state, actions) {
+      state.user = actions.payload.user;
+      state.token = actions.payload.token;
+      state.isLoggedIn = true;
+    },
+    [logIn.fulfilled](state, actions) {
+      console.log(actions);
+      state.user = actions.payload.user;
+      state.token = actions.payload.token;
+      state.isLoggedIn = true;
+    },
+    [logOut.fulfilled](state, actions) {
+      state.user = { name: '', email: '' };
+      state.token = null;
+      state.isLoggedIn = false;
+    },
+
     // builder
     //   .addCase(fetchContacts.pending, handlePending)
     //   .addCase(fetchContacts.fulfilled, (state, action) => {

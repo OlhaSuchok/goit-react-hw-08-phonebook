@@ -27,20 +27,29 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Box
-      height={750}
-      p={30}
-      bg="primary"
-      border="2px solid"
-      borderColor="border"
-      borderRadius={8}
+    <div
+      style={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+      }}
     >
-      {/* <div>Тут буде книга контактів!</div> */}
-      <ContactFormTitle>PHONEBOOK</ContactFormTitle>
-      <ContactForm />
-      <ContactFilter />
-      <ContactFormSecondTitle>CONTACTS</ContactFormSecondTitle>
-      {items && <ContactList />}
-    </Box>
+      <Box
+        height={750}
+        p={30}
+        bg="primary"
+        border="2px solid"
+        borderColor="border"
+        borderRadius={8}
+      >
+        <ContactFormTitle>PHONEBOOK</ContactFormTitle>
+        <ContactForm />
+        <ContactFilter />
+        <ContactFormSecondTitle>CONTACTS</ContactFormSecondTitle>
+        {items && <ContactList />}
+      </Box>
+    </div>
   );
 }
