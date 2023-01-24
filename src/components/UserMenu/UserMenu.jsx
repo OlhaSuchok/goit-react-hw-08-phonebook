@@ -1,4 +1,3 @@
-import { FaUserCircle } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUserEmail } from 'redux/auth/Auth-selectors';
 import { logOut } from 'redux/auth/Auth-operations';
