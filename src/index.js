@@ -23,5 +23,3 @@ root.render(
     </ThemeProvider>
   </React.StrictMode>
 );
-
-// basename = 'goit-react-hw-08-phonebook'

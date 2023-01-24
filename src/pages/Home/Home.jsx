@@ -8,7 +8,7 @@ import { Outlet } from 'react-router-dom';
 export default function Home() {
   return (
     <div>
-      <div>Сторінка Вітання! Рендениться разом з головною сторінкою</div>
+      <div>Сторінка Вітання!</div>
       <Outlet />
     </div>
 

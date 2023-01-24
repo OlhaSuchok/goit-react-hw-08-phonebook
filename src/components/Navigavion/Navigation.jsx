@@ -1,23 +1,29 @@
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-// import { filterContactsAction } from 'redux/filters/filterSlice';
-// import { selectContactsFilter } from 'redux/contacts/Contacts-selectors';
+import { selectIsLoggedIn } from 'redux/auth/Auth-selectors';
 import React from 'react';
 
 import { NavList, NavItem } from './Navigation.styled';
 
 export function Navigation() {
-  // const contactsFilter = useSelector(selectContactsFilter);
-  // const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <NavList>
-      <NavItem>
+      {/* <NavItem>
         <NavLink to="/">Головна</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink to="/contacts">Книга контактів</NavLink>
-      </NavItem>
+      </NavItem> */}
+
+      {isLoggedIn && (
+        <>
+          <NavItem>
+            <NavLink to="/">Головна</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/contacts">Книга контактів</NavLink>
+          </NavItem>
+        </>
+      )}
     </NavList>
   );
 }

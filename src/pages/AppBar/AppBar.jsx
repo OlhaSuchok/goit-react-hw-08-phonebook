@@ -17,7 +17,9 @@ export default function AppBar() {
     <Header>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {/* <Suspense fullback={null}> */}
       <Outlet />
+      {/* </Suspense> */}
     </Header>
   );
 }
