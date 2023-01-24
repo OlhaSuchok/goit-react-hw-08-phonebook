@@ -9,15 +9,17 @@ import Login from 'pages/Login/Login';
 // const AppBar = lazy(() => import('../pages/AppBar'));
 // const Contacts = lazy(() => import('../pages/Contacts'));
 // import { selectContacts } from 'redux/contacts/Contacts-selectors';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 // import { fetchContacts } from 'redux/contacts/Contacts-operations';
+import { fetchCurrentUser } from 'redux/auth/Auth-operations';
 
 export default function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
 
   return (
     <Box p={30}>

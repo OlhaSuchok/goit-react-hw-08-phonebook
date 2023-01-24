@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut } from 'redux/auth/Auth-operations';
+import {
+  register,
+  logIn,
+  logOut,
+  fetchCurrentUser,
+} from 'redux/auth/Auth-operations';
 
 // const handlePending = state => {
 //   state.isLoading = true;
@@ -20,21 +25,26 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   extraReducers: {
-    [register.fulfilled](state, actions) {
-      state.user = actions.payload.user;
-      state.token = actions.payload.token;
+    [register.fulfilled](state, action) {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
       state.isLoggedIn = true;
     },
-    [logIn.fulfilled](state, actions) {
-      console.log(actions);
-      state.user = actions.payload.user;
-      state.token = actions.payload.token;
+    [logIn.fulfilled](state, action) {
+      console.log(action);
+      state.user = action.payload.user;
+      state.token = action.payload.token;
       state.isLoggedIn = true;
     },
-    [logOut.fulfilled](state, actions) {
+    [logOut.fulfilled](state, action) {
       state.user = { name: '', email: '' };
       state.token = null;
       state.isLoggedIn = false;
+    },
+    [fetchCurrentUser.fulfilled](state, action) {
+      console.log(action);
+      state.user = action.payload;
+      state.isLoggedIn = true;
     },
 
     // builder
