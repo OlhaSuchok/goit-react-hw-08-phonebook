@@ -11,7 +11,7 @@ export const FindText = styled.label`
 
 export const FindValue = styled.input`
   min-width: 416px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: ${props => props.theme.colors.mainText};
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.text};

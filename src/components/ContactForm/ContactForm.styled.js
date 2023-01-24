@@ -13,7 +13,7 @@ export const ContactFormWrapper = styled.form`
   border-radius: 4px;
   padding: 16px;
 
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 export const ContactFormText = styled.div``;

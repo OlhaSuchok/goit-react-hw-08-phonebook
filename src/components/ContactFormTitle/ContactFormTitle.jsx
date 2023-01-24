@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const ContactFormTitle = styled.h1`
   text-align: center;
-  margin-bottom: ${props => props.theme.space[6]}px;
+  margin-bottom: 10px;
 
   margin-top: 0;
   color: #f0ffff;
@@ -24,7 +24,7 @@ export const ContactFormTitle = styled.h1`
 
 export const ContactFormSecondTitle = styled.h2`
   text-align: center;
-  margin-bottom: ${props => props.theme.space[5]}px;
+  margin-bottom: 10px;
   margin-top: 0;
   color: transparent;
   background-clip: text;
