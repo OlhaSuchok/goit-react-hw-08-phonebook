@@ -1,15 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { AuthList, AuthListItem } from './AuthNav.styled';
+import { AuthList, AuthListItem, AuthNavLink } from './AuthNav.styled';
 
 export function AuthNav() {
   return (
     <AuthList>
       <AuthListItem>
-        <NavLink to="/register">Реєстрація</NavLink>
+        <AuthNavLink to="/register">Реєстрація</AuthNavLink>
       </AuthListItem>
       <AuthListItem>
-        <NavLink to="/login">Логін</NavLink>
+        <AuthNavLink to="/login">Логін</AuthNavLink>
       </AuthListItem>
     </AuthList>
   );

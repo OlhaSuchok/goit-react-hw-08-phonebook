@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box } from 'components/Box/Box';
 import { logIn } from 'redux/auth/Auth-operations';
 import {
+  LoginWrapper,
   LoginTitle,
   LoginForm,
   LoginLable,
@@ -34,25 +34,27 @@ export default function Login() {
   };
 
   return (
-    <Box p={30}>
-      <LoginTitle>Сторінка логінізації</LoginTitle>
-      <LoginForm onSubmit={handleSubmit}>
-        <LoginLable>Пошта</LoginLable>
-        <LoginInput
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        ></LoginInput>
-        <LoginLable>Пароль</LoginLable>
-        <LoginInput
-          type="text"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        ></LoginInput>
-        <LoginButton type="submit">Вхід</LoginButton>
-      </LoginForm>
-    </Box>
+    <>
+      <LoginTitle>Увійдіть або зареєструйтеся</LoginTitle>
+      <LoginWrapper>
+        <LoginForm onSubmit={handleSubmit}>
+          <LoginLable>Пошта</LoginLable>
+          <LoginInput
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          ></LoginInput>
+          <LoginLable>Пароль</LoginLable>
+          <LoginInput
+            type="text"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          ></LoginInput>
+          <LoginButton type="submit">Вхід</LoginButton>
+        </LoginForm>
+      </LoginWrapper>
+    </>
   );
 }

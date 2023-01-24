@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const AuthList = styled.ul`
   display: flex;
@@ -11,7 +12,28 @@ export const AuthList = styled.ul`
 `;
 
 export const AuthListItem = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 16px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  background-color: rgba(247, 242, 242, 0.6);
+
   &:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 20px;
   }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(247, 242, 242, 0.9);
+  }
+`;
+
+export const AuthNavLink = styled(NavLink)`
+  font-family: cursive;
+  font-size: 18px;
+  color: gray;
+  text-decoration: none;
 `;

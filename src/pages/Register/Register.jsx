@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box } from 'components/Box/Box';
-import { register } from 'redux/auth/Auth-operations'; 
+import { register } from 'redux/auth/Auth-operations';
 import {
+  RegisterWrapper,
   RegisterTitle,
   RegisterForm,
   RegisterLable,
@@ -40,32 +40,34 @@ export default function Register() {
   };
 
   return (
-    <Box p={30}>
-      <RegisterTitle>Сторінка реєстрації</RegisterTitle>
-      <RegisterForm onSubmit={handleSubmit}>
-        <RegisterLable>Ім'я</RegisterLable>
-        <RegisterInput
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChange}
-        ></RegisterInput>
-        <RegisterLable>Пошта</RegisterLable>
-        <RegisterInput
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        ></RegisterInput>
-        <RegisterLable>Пароль</RegisterLable>
-        <RegisterInput
-          type="text"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        ></RegisterInput>
-        <RegisterButton type="submit">Зареєструватися</RegisterButton>
-      </RegisterForm>
-    </Box>
+    <>
+      <RegisterTitle>Реєстрація користувача</RegisterTitle>
+      <RegisterWrapper>
+        <RegisterForm onSubmit={handleSubmit}>
+          <RegisterLable>Ім'я</RegisterLable>
+          <RegisterInput
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+          ></RegisterInput>
+          <RegisterLable>Пошта</RegisterLable>
+          <RegisterInput
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          ></RegisterInput>
+          <RegisterLable>Пароль</RegisterLable>
+          <RegisterInput
+            type="text"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          ></RegisterInput>
+          <RegisterButton type="submit">Зареєструватися</RegisterButton>
+        </RegisterForm>
+      </RegisterWrapper>
+    </>
   );
 }

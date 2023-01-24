@@ -8,7 +8,7 @@ export const ContactFormWrapper = styled.form`
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: rgba(247, 242, 242, 0.2);
   border: 2px solid ${props => props.theme.colors.border};
   border-radius: 4px;
   padding: 16px;

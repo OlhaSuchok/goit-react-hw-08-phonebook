@@ -4,7 +4,7 @@ import { MdDeleteOutline } from 'react-icons/md';
 export const ContactsList = styled.ul`
   margin-top: 0;
   margin-bottom: 0;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: rgba(247, 242, 242, 0.4);
   border: 2px solid ${props => props.theme.colors.border};
   border-radius: 4px;
   padding: 16px;
@@ -34,7 +34,7 @@ export const ContactListButtonDelete = styled.button`
 `;
 
 export const ContactListTextWrapper = styled.div`
-  background-color: ${props => props.theme.colors.item};
+  background-color: rgba(247, 242, 242, 0.6);
   border: 2px solid ${props => props.theme.colors.border};
   border-radius: 4px;
   width: 302px;

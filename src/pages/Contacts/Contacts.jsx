@@ -32,7 +32,7 @@ export default function Contacts() {
       <Box
         height={750}
         p={30}
-        bg="primary"
+        bg="rgba(247, 242, 242, 0.3)"
         border="2px solid"
         borderColor="border"
         borderRadius={8}

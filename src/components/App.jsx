@@ -36,10 +36,6 @@ export default function App() {
                   <PublicRoute redirectTo="/contacts" element={<Home />} />
                 }
               />
-              {/* <Route
-                path="/"
-                element={<PrivatRoute redirectTo="/login" element={<Home />} />}
-              /> */}
               <Route
                 path="/register"
                 element={

@@ -6,6 +6,7 @@ import {
   UserMenuErapper,
   UserMenuText,
   UserMenuButton,
+  FaUserCircleIcon,
 } from './UserMenu.styled';
 
 export function UserMenu() {
@@ -14,7 +15,7 @@ export function UserMenu() {
 
   return (
     <UserMenuErapper>
-      <FaUserCircle />
+      <FaUserCircleIcon size={30} />
       <UserMenuText>{email}</UserMenuText>
       <UserMenuButton type="button" onClick={() => dispatch(logOut())}>
         Вийти
