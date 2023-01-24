@@ -43,6 +43,7 @@ export default function Login() {
             type="email"
             name="email"
             value={email}
+            required
             onChange={handleChange}
           ></LoginInput>
           <LoginLable>Пароль</LoginLable>
@@ -50,6 +51,7 @@ export default function Login() {
             type="text"
             name="password"
             value={password}
+            required
             onChange={handleChange}
           ></LoginInput>
           <LoginButton type="submit">Вхід</LoginButton>

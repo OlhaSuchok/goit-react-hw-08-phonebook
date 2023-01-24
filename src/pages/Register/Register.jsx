@@ -49,6 +49,7 @@ export default function Register() {
             type="text"
             name="name"
             value={name}
+            required
             onChange={handleChange}
           ></RegisterInput>
           <RegisterLable>Пошта</RegisterLable>
@@ -56,6 +57,7 @@ export default function Register() {
             type="email"
             name="email"
             value={email}
+            required
             onChange={handleChange}
           ></RegisterInput>
           <RegisterLable>Пароль</RegisterLable>
@@ -63,6 +65,9 @@ export default function Register() {
             type="text"
             name="password"
             value={password}
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
             onChange={handleChange}
           ></RegisterInput>
           <RegisterButton type="submit">Зареєструватися</RegisterButton>
