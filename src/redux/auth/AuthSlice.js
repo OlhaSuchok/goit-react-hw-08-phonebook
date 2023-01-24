@@ -17,35 +17,6 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   extraReducers: builder => {
-    // [register.fulfilled](state, action) {
-    //   state.user = action.payload.user;
-    //   state.token = action.payload.token;
-    //   state.isLoggedIn = true;
-    // },
-    // [logIn.fulfilled](state, action) {
-    //   console.log(action);
-    //   state.user = action.payload.user;
-    //   state.token = action.payload.token;
-    //   state.isLoggedIn = true;
-    // },
-    // [logOut.fulfilled](state, action) {
-    //   state.user = { name: '', email: '' };
-    //   state.token = null;
-    //   state.isLoggedIn = false;
-    // },
-    // [fetchCurrentUser.pending](state, action) {
-    //   state.isFetchingCurrentUser = true;
-    // },
-    // [fetchCurrentUser.fulfilled](state, action) {
-    //   console.log(action);
-    //   state.user = action.payload;
-    //   state.isLoggedIn = true;
-    //   state.isFetchingCurrentUser = false;
-    // },
-    // [fetchCurrentUser.rejected](state, action) {
-    //   state.isFetchingCurrentUser = false;
-    // },
-
     builder
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -53,7 +24,6 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(logIn.fulfilled, (state, action) => {
-        console.log(action);
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
@@ -67,7 +37,6 @@ const authSlice = createSlice({
         state.isFetchingCurrentUser = true;
       })
       .addCase(fetchCurrentUser.fulfilled, (state, action) => {
-        console.log(action);
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isFetchingCurrentUser = false;

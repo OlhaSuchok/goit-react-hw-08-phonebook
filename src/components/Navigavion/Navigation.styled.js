@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
+export const NavWrapper = styled.div`
+  /* align-self: center; */
+`;
+
 export const NavList = styled.ul`
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;

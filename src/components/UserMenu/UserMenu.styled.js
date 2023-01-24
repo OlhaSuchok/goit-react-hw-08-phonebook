@@ -19,10 +19,6 @@ export const UserMenuText = styled.p`
   font-family: cursive;
   font-size: 18px;
   color: dimgray;
-
-  /* &:not(:last-child) {
-    margin-right: 20px;
-  } */
 `;
 
 export const UserMenuButton = styled.button`

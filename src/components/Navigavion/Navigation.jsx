@@ -1,15 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
-// import Button from '@mui/material-next/Button';
 import { selectIsLoggedIn } from 'redux/auth/Auth-selectors';
-import { NavList, NavItem, NavigationNavLink } from './Navigation.styled';
+import {
+  NavWrapper,
+  NavList,
+  NavItem,
+  NavigationNavLink,
+} from './Navigation.styled';
 
 export function Navigation() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <>
+    <NavWrapper>
       <NavList>
         {isLoggedIn && (
           <>
@@ -24,6 +27,6 @@ export function Navigation() {
           </>
         )}
       </NavList>
-    </>
+    </NavWrapper>
   );
 }
