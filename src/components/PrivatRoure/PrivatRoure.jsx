@@ -6,4 +6,3 @@ export default function PrivatRoute({ element, redirectTo = '/' }) {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return isLoggedIn ? element : <Navigate to={redirectTo} />;
 }
-

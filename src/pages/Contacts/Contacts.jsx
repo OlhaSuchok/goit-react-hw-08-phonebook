@@ -1,16 +1,6 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/contacts/Contacts-operations';
+import { useSelector, useDispatch } from 'react-redux';
 import { Box } from 'components/Box/Box';
-// import ContactForm from './ContactForm/ContactForm';
-// import {
-//   ContactFormTitle,
-//   ContactFormSecondTitle,
-// } from './ContactFormTitle/ContactFormTitle';
-// import { ContactList } from './ContactList/ContactList';
-// import { ContactFilter } from './ContactFilter/ContactFilter';
-import { selectContacts } from 'redux/contacts/Contacts-selectors';
-
 import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactFilter } from 'components/ContactFilter/ContactFilter';
 import { ContactList } from 'components/ContactList/ContactList';
@@ -18,6 +8,8 @@ import {
   ContactFormTitle,
   ContactFormSecondTitle,
 } from 'components/ContactFormTitle/ContactFormTitle';
+import { fetchContacts } from 'redux/contacts/Contacts-operations';
+import { selectContacts } from 'redux/contacts/Contacts-selectors';
 
 export default function Contacts() {
   const items = useSelector(selectContacts);

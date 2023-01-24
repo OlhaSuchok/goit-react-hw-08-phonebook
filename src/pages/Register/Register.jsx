@@ -1,24 +1,7 @@
-import { Box } from 'components/Box/Box';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { useEffect } from 'react';
-// import { fetchContacts } from 'redux/operations';
-// import { Box } from 'components/Box/Box';
-// import ContactForm from './ContactForm/ContactForm';
-// import {
-//   ContactFormTitle,
-//   ContactFormSecondTitle,
-// } from './ContactFormTitle/ContactFormTitle';
-// import { ContactList } from './ContactList/ContactList';
-// import { ContactFilter } from './ContactFilter/ContactFilter';
-// import { selectContacts } from 'redux/contacts/Contacts-selectors';
-
-// import ContactForm from 'components/ContactForm/ContactForm';
-// import { ContactFilter } from 'components/ContactFilter/ContactFilter';
-// import { ContactList } from 'components/ContactList/ContactList';
-// import {
-//   ContactFormTitle,
-//   ContactFormSecondTitle,
-// } from 'components/ContactFormTitle/ContactFormTitle';
+import { Box } from 'components/Box/Box';
+import { register } from 'redux/auth/Auth-operations'; 
 import {
   RegisterTitle,
   RegisterForm,
@@ -26,17 +9,9 @@ import {
   RegisterInput,
   RegisterButton,
 } from './Register.styled';
-// import { selectUserName } from 'redux/auth/Auth-selectors';
-// import { selectUserEmail } from 'redux/auth/Auth-selectors';
-// import { selectIsLoggedIn } from 'redux/auth/Auth-selectors';
-import { register } from 'redux/auth/Auth-operations';
-import { useState } from 'react';
 
 export default function Register() {
   const dispatch = useDispatch();
-  // const name = useSelector(selectUserName);
-  // const email = useSelector(selectUserEmail);
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

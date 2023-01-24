@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from 'components/Loader/Loader';
-import { deleteContact } from 'redux/contacts/Contacts-operations';
-import { useEffect } from 'react';
 import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
+import { deleteContact } from 'redux/contacts/Contacts-operations';
 import { fetchContacts } from 'redux/contacts/Contacts-operations';
 import {
   selectVisibleContacts,
@@ -32,7 +32,6 @@ export function ContactList() {
 
   return (
     <ContactsList>
-      {isloading && !error && <Loader />}
       {error && <ErrorMessage />}
       {visibleContacts.map(item => (
         <ContactListItem key={item.id}>
@@ -48,6 +47,7 @@ export function ContactList() {
           </ContactListButtonDelete>
         </ContactListItem>
       ))}
+      {isloading && !error && <Loader />}
     </ContactsList>
   );
 }

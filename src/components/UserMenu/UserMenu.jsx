@@ -1,8 +1,6 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { FaUserCircle } from 'react-icons/fa';
-
-// import { filterContactsAction } from 'redux/filters/filterSlice';
-import { selectUserName } from 'redux/auth/Auth-selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUserEmail } from 'redux/auth/Auth-selectors';
 import { logOut } from 'redux/auth/Auth-operations';
 import {
   UserMenuErapper,
@@ -12,13 +10,12 @@ import {
 
 export function UserMenu() {
   const dispatch = useDispatch();
-  const name = useSelector(selectUserName);
+  const email = useSelector(selectUserEmail);
 
   return (
     <UserMenuErapper>
-      {/* <img alt="Фото користувача"></img> */}
       <FaUserCircle />
-      <UserMenuText>Вітаю, {name}!</UserMenuText>
+      <UserMenuText>{email}</UserMenuText>
       <UserMenuButton type="button" onClick={() => dispatch(logOut())}>
         Вийти
       </UserMenuButton>

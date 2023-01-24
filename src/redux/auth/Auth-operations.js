@@ -51,7 +51,6 @@ export const fetchCurrentUser = createAsyncThunk(
 
     if (PersistedToken === null) {
       return thunkAPI.rejectWithValue();
-      // return state;
     }
     token.set(PersistedToken);
     try {
@@ -60,39 +59,3 @@ export const fetchCurrentUser = createAsyncThunk(
     } catch (error) {}
   }
 );
-
-// export const fetchContacts = createAsyncThunk(
-//   'contacts/fetchAll ',
-//   async (_, thunkAPI) => {
-//     try {
-//       const { data } = await axios.get('/contacts');
-//       return data;
-//     } catch (event) {
-//       return thunkAPI.rejectWithValue(event.message);
-//     }
-//   }
-// );
-
-// export const addContact = createAsyncThunk(
-//   'contacts/addContact ',
-//   async ({ name, phone }, thunkAPI) => {
-//     try {
-//       const { data } = await axios.post('/contacts', { name, phone });
-//       return data;
-//     } catch (event) {
-//       return thunkAPI.rejectWithValue(event.message);
-//     }
-//   }
-// );
-
-// export const deleteContact = createAsyncThunk(
-//   'contacts/deleteContact ',
-//   async (taskId, thunkAPI) => {
-//     try {
-//       const { data } = await axios.delete(`/contacts/${taskId}`);
-//       return data;
-//     } catch (event) {
-//       return thunkAPI.rejectWithValue(event.message);
-//     }
-//   }
-// );
