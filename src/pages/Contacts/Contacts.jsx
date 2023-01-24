@@ -22,6 +22,7 @@ import {
 export default function Contacts() {
   const items = useSelector(selectContacts);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);

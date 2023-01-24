@@ -22,9 +22,9 @@ export default function ContactForm() {
     event.preventDefault();
     const form = event.target;
     const name = form.elements.name.value;
-    const phone = form.elements.phone.value;
+    const number = form.elements.number.value;
 
-    const newContact = { name, phone, id: nanoid() };
+    const newContact = { name, number, id: nanoid() };
     const isContact = items.find(item => item.name === newContact.name);
 
     if (isContact) {
@@ -49,7 +49,7 @@ export default function ContactForm() {
       />
       <ContactFormFieldSecond
         type="tel"
-        name="phone"
+        name="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required

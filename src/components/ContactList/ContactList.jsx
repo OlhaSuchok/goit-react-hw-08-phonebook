@@ -38,7 +38,7 @@ export function ContactList() {
         <ContactListItem key={item.id}>
           <ContactListTextWrapper>
             <ContactListItemName>{item.name}</ContactListItemName>
-            <ContactListItemPhone>{item.phone}</ContactListItemPhone>
+            <ContactListItemPhone>{item.number}</ContactListItemPhone>
           </ContactListTextWrapper>
           <ContactListButtonDelete
             type="button"

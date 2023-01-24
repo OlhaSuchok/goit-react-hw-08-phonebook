@@ -8,8 +8,17 @@ import Register from 'pages/Register/Register';
 import Login from 'pages/Login/Login';
 // const AppBar = lazy(() => import('../pages/AppBar'));
 // const Contacts = lazy(() => import('../pages/Contacts'));
+// import { selectContacts } from 'redux/contacts/Contacts-selectors';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { useEffect } from 'react';
+// import { fetchContacts } from 'redux/contacts/Contacts-operations';
 
 export default function App() {
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
+
   return (
     <Box p={30}>
       <AppBar />

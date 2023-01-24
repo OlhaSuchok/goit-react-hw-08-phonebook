@@ -1,15 +1,23 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://63ca872ad0ab64be2b54ad5b.mockapi.io/';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+// const token = {
+//   set(token) {
+//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+//   },
+//   unset() {
+//     axios.defaults.headers.common.Authorization = '';
+//   },
+// };
 
 export const fetchContacts = createAsyncThunk(
-  'contacts/fetchAll ',
+  'contacts/fetchAll',
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/contacts');
+      console.log(data);
       return data;
     } catch (event) {
       return thunkAPI.rejectWithValue(event.message);
@@ -18,30 +26,16 @@ export const fetchContacts = createAsyncThunk(
 );
 
 export const addContact = createAsyncThunk(
-  'contacts/addContact ',
-  async ({ name, phone }, thunkAPI) => {
+  'contacts/addContact',
+  async ({ name, number }, thunkAPI) => {
     try {
-      const { data } = await axios.post('/contacts', { name, phone });
+      const { data } = await axios.post('/contacts', { name, number });
+      console.log(data);
       return data;
     } catch (event) {
       return thunkAPI.rejectWithValue(event.message);
     }
   }
-
-  // ,
-  // {
-  //   condition: (user, thunkAPI) => {
-  //     const state = thunkAPI.getState();
-  //     const { users } = state;
-  //     const isUserExist = users.users.find(
-  //       person => person.name === user.name || person.phone === user.phone
-  //     );
-  //     if (isUserExist) {
-  //       alert(`${user.name} already in your contacts`);
-  //       return false;
-  //     }
-  //   },
-  // }
 );
 
 export const deleteContact = createAsyncThunk(
@@ -49,6 +43,7 @@ export const deleteContact = createAsyncThunk(
   async (taskId, thunkAPI) => {
     try {
       const { data } = await axios.delete(`/contacts/${taskId}`);
+      console.log(data);
       return data;
     } catch (event) {
       return thunkAPI.rejectWithValue(event.message);
