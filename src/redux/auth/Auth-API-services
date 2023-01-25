@@ -1,0 +1,21 @@
+// import { createAsyncThunk } from '@reduxjs/toolkit';
+// import axios from 'axios';
+
+// export const logIn = createAsyncThunk(
+//   'auth/login',
+//   async (credentials, { rejectWithValue }) => {
+//     try {
+//       const { data } = await axios.post('users/login', credentials);
+//       token.set(data.token);
+//       toast.success('Вітаю! Ви успішно увійшли до PHONEBOOCK!', {
+//         position: toast.POSITION.TOP_RIGHT,
+//       });
+//       return data;
+//     } catch (error) {
+//       toast.error('Пошта або пароль введені невірно.', {
+//         position: toast.POSITION.TOP_RIGHT,
+//       });
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );
