@@ -1,7 +1,7 @@
 import { Suspense, useEffect, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Loader from 'components/Loader/Loader';
+import Blocks from 'components/MainLoader/MainLoader';
 import { Box } from 'components/Box/Box';
 import AppBar from 'pages/AppBar/AppBar';
 import PrivatRoute from './PrivatRoure/PrivatRoure';
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <Box p={30}>
       {isFetchingCurrentUser ? (
-        <Loader />
+        <Blocks />
       ) : (
         <>
           <AppBar />

@@ -133,7 +133,7 @@ export const RegisterButton = styled.button`
 
 export const RegisterButtonIcon = styled(AiFillEye)`
   position: absolute;
-  top: 8px;
+  top: 10px;
   right: 12px;
   color: lightgray;
   cursor: pointer;
@@ -149,7 +149,7 @@ export const RegisterButtonIconWrapper = styled.div`
   &::after {
     position: absolute;
     content: '';
-    top: 19px;
+    top: 21px;
     right: 10px;
     width: 28px;
     height: 2px;

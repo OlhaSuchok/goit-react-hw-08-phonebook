@@ -146,7 +146,7 @@ export const LoginButtonIconWrapper = styled.div`
   &::after {
     position: absolute;
     content: '';
-    top: 19px;
+    top: 21px;
     right: 10px;
     width: 28px;
     height: 2px;
@@ -159,7 +159,7 @@ export const LoginButtonIconWrapper = styled.div`
 
 export const LoginButtonIcon = styled(AiFillEye)`
   position: absolute;
-  top: 8px;
+  top: 10px;
   right: 12px;
   color: lightgray;
   cursor: pointer;
