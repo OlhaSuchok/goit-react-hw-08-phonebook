@@ -10,6 +10,8 @@ import {
   LoginInputPassword,
   RegisterButton,
   RegisterButtonIcon,
+  RegisterButtonIconWrapper,
+  RegisterInputLoginWrapper,
 } from './Register.styled';
 
 export default function Register() {
@@ -18,6 +20,19 @@ export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const visibilityIcons = document.querySelector('div form div div');
+  const passwordInput = document.querySelector('form .input-password-register');
+
+  const handleIconPasswordClick = () => {
+    visibilityIcons.classList.toggle('active');
+
+    if (passwordInput.getAttribute('type') === 'password') {
+      passwordInput.setAttribute('type', 'text');
+    } else {
+      passwordInput.setAttribute('type', 'password');
+    }
+  };
 
   const handleChange = ({ target: { name, value } }) => {
     console.log('name', name, 'value', value);
@@ -65,15 +80,20 @@ export default function Register() {
             onChange={handleChange}
           ></RegisterInput>
           <RegisterLable>Пароль</RegisterLable>
-          <LoginInputPassword
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Введіть пароль"
-            required
-            onChange={handleChange}
-          ></LoginInputPassword>
-          <RegisterButtonIcon size={25} />
+          <RegisterInputLoginWrapper>
+            <LoginInputPassword
+              className="input-password-register"
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Введіть пароль"
+              required
+              onChange={handleChange}
+            ></LoginInputPassword>
+            <RegisterButtonIconWrapper className="register-icon-wrapper">
+              <RegisterButtonIcon size={25} onClick={handleIconPasswordClick} />
+            </RegisterButtonIconWrapper>
+          </RegisterInputLoginWrapper>
           <RegisterButton type="submit">Зареєструватися</RegisterButton>
         </RegisterForm>
       </RegisterWrapper>

@@ -38,17 +38,16 @@ export default function Login() {
   };
 
   const visibilityIcons = document.querySelector('div form div div');
-  console.log(visibilityIcons);
-
-  const form = document.querySelector('div form');
-  console.log(form);
-
-  const passwordInput = document.querySelector('form .input-password');
-  console.log(passwordInput);
+  const passwordInput = document.querySelector('form .input-password-login');
 
   const handleIconPasswordClick = () => {
     visibilityIcons.classList.toggle('active');
-    console.log('Клікнули на іконку');
+
+    if (passwordInput.getAttribute('type') === 'password') {
+      passwordInput.setAttribute('type', 'text');
+    } else {
+      passwordInput.setAttribute('type', 'password');
+    }
   };
 
   return (
@@ -68,7 +67,7 @@ export default function Login() {
           <LoginLable>Пароль</LoginLable>
           <LoginInputPasswordWrapper>
             <LoginInputPassword
-              className="input-password"
+              className="input-password-login"
               type="password"
               name="password"
               value={password}

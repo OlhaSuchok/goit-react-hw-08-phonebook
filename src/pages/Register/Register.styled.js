@@ -120,8 +120,34 @@ export const RegisterButton = styled.button`
 `;
 
 export const RegisterButtonIcon = styled(AiFillEye)`
-  /* &:hover,
-  &:focus {
-    background-color: rgba(247, 242, 242, 0.9);
-  } */
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: lightgray;
+  cursor: pointer;
+`;
+
+export const RegisterButtonIconWrapper = styled.div`
+  &.active {
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 19px;
+    right: 10px;
+    width: 28px;
+    height: 2px;
+    background-color: lightgray;
+    transform: rotate(45deg);
+    transition: 0.3s all ease;
+    opacity: 1;
+  }
+`;
+
+export const RegisterInputLoginWrapper = styled.div`
+  position: relative;
 `;

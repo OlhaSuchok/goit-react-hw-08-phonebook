@@ -151,9 +151,4 @@ export const LoginButtonIcon = styled(AiFillEye)`
   right: 12px;
   color: lightgray;
   cursor: pointer;
-
-  /* &:hover,
-  &:focus {
-    background-color: rgba(247, 242, 242, 0.9);
-  } */
 `;
