@@ -14,7 +14,7 @@ export default function Loader() {
       wrapperStyle={{
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '',
+        marginTop: '30px',
       }}
     />
   );
