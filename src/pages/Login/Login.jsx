@@ -48,7 +48,7 @@ export default function Login() {
           ></LoginInput>
           <LoginLable>Пароль</LoginLable>
           <LoginInput
-            type="text"
+            type="password"
             name="password"
             value={password}
             required
