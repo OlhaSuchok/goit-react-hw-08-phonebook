@@ -10,7 +10,10 @@ export const FindText = styled.label`
 `;
 
 export const FindValue = styled.input`
-  min-width: 416px;
+  margin-right: auto;
+  margin-left: auto;
+
+  width: 410px;
   margin-bottom: 10px;
   color: ${props => props.theme.colors.mainText};
   font-size: ${props => props.theme.fontSizes.m};

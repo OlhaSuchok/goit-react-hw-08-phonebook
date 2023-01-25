@@ -19,6 +19,7 @@ export const ContactFormWrapper = styled.form`
 export const ContactFormText = styled.div``;
 
 export const ContactFormFieldFirst = styled.input`
+  width: 340px;
   height: 35px;
   border: 2px solid ${props => props.theme.colors.border};
   border-radius: 4px;
@@ -54,6 +55,7 @@ export const ContactFormFieldFirst = styled.input`
 `;
 
 export const ContactFormFieldSecond = styled.input`
+  width: 340px;
   height: 35px;
   border: 2px solid ${props => props.theme.colors.border};
   border-radius: 4px;
@@ -89,7 +91,7 @@ export const ContactFormFieldSecond = styled.input`
 export const ContactFormButton = styled.button`
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 6px;
 
   background-color: transparent;
   border: none;

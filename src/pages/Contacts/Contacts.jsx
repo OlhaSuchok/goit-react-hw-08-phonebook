@@ -36,6 +36,12 @@ export default function Contacts() {
         border="2px solid"
         borderColor="border"
         borderRadius={8}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
       >
         <ContactFormTitle>PHONEBOOK</ContactFormTitle>
         <ContactForm />
