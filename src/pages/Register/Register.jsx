@@ -7,7 +7,9 @@ import {
   RegisterForm,
   RegisterLable,
   RegisterInput,
+  LoginInputPassword,
   RegisterButton,
+  RegisterButtonIcon,
 } from './Register.styled';
 
 export default function Register() {
@@ -49,6 +51,7 @@ export default function Register() {
             type="text"
             name="name"
             value={name}
+            placeholder="Введіть ім'я"
             required
             onChange={handleChange}
           ></RegisterInput>
@@ -57,17 +60,20 @@ export default function Register() {
             type="email"
             name="email"
             value={email}
+            placeholder="Введіть пошту"
             required
             onChange={handleChange}
           ></RegisterInput>
           <RegisterLable>Пароль</RegisterLable>
-          <RegisterInput
+          <LoginInputPassword
             type="password"
             name="password"
             value={password}
+            placeholder="Введіть пароль"
             required
             onChange={handleChange}
-          ></RegisterInput>
+          ></LoginInputPassword>
+          <RegisterButtonIcon size={25} />
           <RegisterButton type="submit">Зареєструватися</RegisterButton>
         </RegisterForm>
       </RegisterWrapper>

@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { selectContacts } from 'redux/contacts/contacts-selectors';
 import { selectContacts } from 'redux/contacts/Contacts-selectors';
 import { addContact } from 'redux/contacts/Contacts-operations';
 import { nanoid } from 'nanoid';

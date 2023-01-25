@@ -7,7 +7,11 @@ import {
   LoginForm,
   LoginLable,
   LoginInput,
+  LoginInputPassword,
   LoginButton,
+  LoginButtonIcon,
+  LoginInputPasswordWrapper,
+  LoginButtonIconWrapper,
 } from './Login.styled';
 
 export default function Login() {
@@ -33,6 +37,20 @@ export default function Login() {
     setPassword('');
   };
 
+  const visibilityIcons = document.querySelector('div form div div');
+  console.log(visibilityIcons);
+
+  const form = document.querySelector('div form');
+  console.log(form);
+
+  const passwordInput = document.querySelector('form .input-password');
+  console.log(passwordInput);
+
+  const handleIconPasswordClick = () => {
+    visibilityIcons.classList.toggle('active');
+    console.log('Клікнули на іконку');
+  };
+
   return (
     <>
       <LoginTitle>Увійдіть або зареєструйтеся</LoginTitle>
@@ -43,17 +61,25 @@ export default function Login() {
             type="email"
             name="email"
             value={email}
+            placeholder="Введіть пошту"
             required
             onChange={handleChange}
           ></LoginInput>
           <LoginLable>Пароль</LoginLable>
-          <LoginInput
-            type="password"
-            name="password"
-            value={password}
-            required
-            onChange={handleChange}
-          ></LoginInput>
+          <LoginInputPasswordWrapper>
+            <LoginInputPassword
+              className="input-password"
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Введіть пароль"
+              required
+              onChange={handleChange}
+            ></LoginInputPassword>
+            <LoginButtonIconWrapper>
+              <LoginButtonIcon size={25} onClick={handleIconPasswordClick} />
+            </LoginButtonIconWrapper>
+          </LoginInputPasswordWrapper>
           <LoginButton type="submit">Вхід</LoginButton>
         </LoginForm>
       </LoginWrapper>
