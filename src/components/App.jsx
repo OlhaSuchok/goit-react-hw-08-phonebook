@@ -40,7 +40,7 @@ export default function App() {
                 path="/register"
                 element={
                   <PublicRoute
-                    redirectTo="/contacts"
+                    redirectTo="/"
                     element={<Register />}
                     restricted
                   />
