@@ -21,6 +21,7 @@ export const RegisterTitle = styled.h1`
   margin-top: 60px;
   color: lightcyan;
   font-size: 36px;
+  font-family: cursive;
 `;
 
 export const RegisterForm = styled.form`
