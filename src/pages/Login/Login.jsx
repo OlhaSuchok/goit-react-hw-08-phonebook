@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { logIn } from 'redux/auth/Auth-operations';
 import {
   LoginWrapper,
@@ -82,6 +84,7 @@ export default function Login() {
           <LoginButton type="submit">Вхід</LoginButton>
         </LoginForm>
       </LoginWrapper>
+      <ToastContainer autoClose={5000} style={{ fontSize: '20px' }} />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
@@ -18,8 +19,17 @@ export const register = createAsyncThunk(
     try {
       const { data } = await axios.post('users/signup', credentials);
       token.set(data.token);
+      toast.success('Вітаю! Ви успішно зареєструвалися у PHONEBOOCK!', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return data;
     } catch (error) {
+      toast.error(
+        'Невірний формат електронної пошти або паролю, спробуйте ще.',
+        {
+          position: toast.POSITION.TOP_RIGHT,
+        }
+      );
       return rejectWithValue(error.message);
     }
   }
@@ -31,8 +41,14 @@ export const logIn = createAsyncThunk(
     try {
       const { data } = await axios.post('users/login', credentials);
       token.set(data.token);
+      toast.success('Вітаю! Ви успішно увійшли до PHONEBOOCK!', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return data;
     } catch (error) {
+      toast.error('Пошта або пароль введені невірно.', {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return rejectWithValue(error.message);
     }
   }

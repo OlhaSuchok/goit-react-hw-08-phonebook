@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/Auth-operations';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   RegisterWrapper,
   RegisterTitle,
@@ -96,6 +98,7 @@ export default function Register() {
           <RegisterButton type="submit">Зареєструватися</RegisterButton>
         </RegisterForm>
       </RegisterWrapper>
+      <ToastContainer autoClose={5000} style={{ fontSize: '20px' }} />
     </>
   );
 }

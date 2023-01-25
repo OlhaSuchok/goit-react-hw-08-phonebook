@@ -12,7 +12,7 @@ export const LoginWrapper = styled.div`
   background-color: rgba(247, 242, 242, 0.2);
   border: 2px solid ${props => props.theme.colors.border};
   border-radius: 4px;
-  padding: 16px;
+  padding: 16px 4px;
 `;
 
 export const LoginTitle = styled.h1`
@@ -36,7 +36,7 @@ export const LoginLable = styled.label`
   font-size: 18px;
   color: whitesmoke;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 `;
 
 export const LoginInput = styled.input`
@@ -88,7 +88,7 @@ export const LoginInputPassword = styled.input`
 
   margin-bottom: ${props => props.theme.space[5]}px;
   padding: 6px 10px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 
   &:hover {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
