@@ -33,7 +33,14 @@ export const FindValue = styled.input`
   }
 
   &::placeholder {
-    font: inherit;
-    font-size: 20px;
+    font-family: cursive;
+    font-size: 18px;
+    color: gray;
+  }
+
+  &[value] {
+    font-family: cursive;
+    font-size: 24px;
+    color: gray;
   }
 `;

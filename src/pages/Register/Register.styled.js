@@ -66,6 +66,12 @@ export const RegisterInput = styled.input`
     font-size: 18px;
     color: gray;
   }
+
+  &[value] {
+    font-family: cursive;
+    font-size: 24px;
+    color: gray;
+  }
 `;
 
 export const LoginInputPassword = styled.input`
@@ -94,6 +100,12 @@ export const LoginInputPassword = styled.input`
   &::placeholder {
     font-family: cursive;
     font-size: 18px;
+    color: gray;
+  }
+
+  &[value] {
+    font-family: cursive;
+    font-size: 24px;
     color: gray;
   }
 `;

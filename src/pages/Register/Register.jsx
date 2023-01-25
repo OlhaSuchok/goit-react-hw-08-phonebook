@@ -35,7 +35,6 @@ export default function Register() {
   };
 
   const handleChange = ({ target: { name, value } }) => {
-    console.log('name', name, 'value', value);
     switch (name) {
       case 'name':
         return setName(value);
